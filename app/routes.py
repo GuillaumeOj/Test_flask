@@ -6,14 +6,14 @@ from app.forms import LoginForm
 @app.route('/')
 @app.route('/index')
 def index():
-    user = {'user_name': 'Guillaume'}
+    user = {'username': 'Guillaume'}
     posts = [
                 {
-                    'author': {'user_name': 'Michel'},
+                    'author': {'username': 'Michel'},
                     'body': 'Beautiful day in Portland'
                 },
                 {
-                    'author': {'user_name': 'Babeth'},
+                    'author': {'username': 'Babeth'},
                     'body': 'The Avengers\' movie was so cool!'
                 }]
     return render_template('index.html', title='Home', user=user, posts=posts)
@@ -23,7 +23,7 @@ def index():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        message = f'Login requested for {form.user_name.data},'
+        message = f'Login requested for {form.username.data},'
         message += f' remember_me={form.remember_me.data}'
         flash(message)
         return redirect(url_for('index'))
