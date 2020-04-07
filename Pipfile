@@ -13,6 +13,7 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask-login = "*"
 psycopg2 = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
