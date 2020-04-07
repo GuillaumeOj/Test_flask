@@ -1,0 +1,6 @@
+        <article style="display: flex;">
+            <div class="post_avatar">
+                <img src="{{ post.author.avatar(56) }}" alt="{{ post.author.username }}'s avatar" />
+            </div>
+            <p><strong>{{ post.author.username }}</strong> says:<br /> {{ post.body }}</p>
+        </article>

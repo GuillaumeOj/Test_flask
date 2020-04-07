@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <h1>User: {{ user.username }}</h1>
+        <img src="{{ user.avatar(128) }}"
+             alt="{{ user.username }}'s avatar"/>
+        {% for post in posts: %}
+            {% include '_post.html' %}
+        {% endfor %}
+{% endblock %}
