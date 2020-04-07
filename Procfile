@@ -1,3 +1,1 @@
-web: gunicorn app:app
-
-init: FLASK_APP=microblog.py flask init_db
+web: flask db upgrade; gunicorn app:app
