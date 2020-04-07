@@ -12,6 +12,7 @@ flask-wtf = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask-login = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
