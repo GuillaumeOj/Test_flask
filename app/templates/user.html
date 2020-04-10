@@ -1,9 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-        <h1>User: {{ user.username }}</h1>
-        <img src="{{ user.avatar(128) }}"
-             alt="{{ user.username }}'s avatar"/>
+        <div id="user_sheet" style="display: flex;">
+            <div id="avatar">
+                <img src="{{ user.avatar(128) }}" alt="{{ user.username }}'s avatar"/>
+            </div>
+            <div id="bio">
+                <h1>User: {{ user.username }}</h1>
+                <div id="user_informations">
+                {% if user.about_me %}
+                    <p>{{ user.about_me }}</p>
+                {% endif %}
+                {% if user.last_seen %}
+                    <p>Last seen on: {{ user.last_seen }}</p>
+                {% endif %}
+                {% if user == current_user %}
+                    <p><a href="{{ url_for('edit_profile') }}">Edit profile</a></p>
+                {% endif %}
+                </div>
+            </div>
+        </div>
         {% for post in posts: %}
             {% include '_post.html' %}
         {% endfor %}
